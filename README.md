@@ -1,4 +1,4 @@
-# logic-of-programming-II
+# Lógica de programação II
 Curso de Lógica de programação II: pratique com desenhos, animações e um jogo
 
 # Alura

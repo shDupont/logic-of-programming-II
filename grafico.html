@@ -1,0 +1,43 @@
+
+
+<canvas width="700" height="500"></canvas>
+
+<script>
+    
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    var cores = ['blue', 'green', 'yellow', 'red'];
+    var serie2015 = [50, 25, 20, 5];
+    var serie2016 = [65, 20, 13, 2];
+
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaTexto(texto, x, y){
+        pincel.font='20px Georgia';
+        pincel.fillStyle='black';
+        pincel.fillText(texto, x, y);
+    }
+    
+
+    function desenhaBarra(x, y, serie, cor) {
+
+        var somaAltura = 0;
+
+        for (var i = 0; i < 4; i++){
+            var altura = serie[i];
+            pincel.fillStyle= cores[i];
+            pincel.fillRect(x, y + somaAltura, 50, altura);
+            pincel.strokeStyle='black';
+            pincel.strokeRect(x, y + somaAltura, 50, altura);
+            somaAltura += altura;
+        }
+        
+    }
+
+    desenhaTexto("2015", 50, 25)
+    desenhaBarra(50, 50, serie2015, cores);
+    desenhaTexto("2016", 150, 25)
+    desenhaBarra(150, 50, serie2016, cores, '2016');
+</script>
